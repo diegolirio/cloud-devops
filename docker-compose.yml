@@ -8,14 +8,15 @@ services:
             - 5000:5000
         volumes:
             - /var/registry:/var/lib/registry
-        deploy:
-            resources:
-                limits:
-                    cpus: '0.50'
-                    memory: 50M
-                reservations:
-                    cpus: '0.10'
-                    memory: 20M       
+
+        #deploy:
+        #    resources:
+        #        limits:
+        #            cpus: '0.50'
+        #            memory: 50M
+        #        reservations:
+        #            cpus: '0.10'
+        #            memory: 20M       
         #environment:
             #VIRTUAL_HOST: localhost
             #VIRTUAL_PROTO: https
