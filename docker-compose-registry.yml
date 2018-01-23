@@ -16,7 +16,8 @@ services:
         #            memory: 50M
         #        reservations:
         #            cpus: '0.10'
-        #            memory: 20M       
+        #            memory: 20M 
+              
         #environment:
             #VIRTUAL_HOST: localhost
             #VIRTUAL_PROTO: https
@@ -26,3 +27,10 @@ services:
             #REGISTRY_AUTH: htpasswd
             #REGISTRY_AUTH_HTPASSWD_PATH: /auth/htpasswd
             #REGISTRY_AUTH_HTPASSWD_REALM: Registry Realm
+
+        networks: 
+            - infra-cloud
+
+networks: 
+    infra-cloud:
+        driver: bridge                        
