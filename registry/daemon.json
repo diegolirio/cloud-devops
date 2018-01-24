@@ -1,7 +1,8 @@
-/*{
+{
     "insecure-registries" : [ "registry.phoenix4go.com:5000" ]
 }
-*/
+/*
 {
     "allow-nondistributable-artifacts": [ "registry.phoenix4go.com:5000" ]
 }
+*/
