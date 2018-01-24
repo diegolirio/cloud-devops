@@ -1,13 +1,18 @@
 version: '3'
 services:        
     registry:
-        image: registry:2
+        build:
+            dockerfile: ./registry/registry.dockerfile
+            context: .
+        image: phoenix4go/registry:2.1
         container_name: registry
         restart: always
         ports:
             - 5000:5000
         volumes:
             - /var/registry:/var/lib/registry
+            #- /home/diegolirio/workspace/docker/cloud-devops/registry:/etc/docker
+        #insecure-registry: p4go-devops.southindia.cloudapp.azure.com:5000
 
         #deploy:
         #    resources:
