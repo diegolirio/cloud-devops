@@ -1,5 +1,17 @@
 version: '3'
 services:        
+    nginx:
+        image: "nginx:1.9"
+        container_name: nginx
+        ports:
+            - 5043:443
+        links:
+            - registry:registry
+        volumes:
+            - ./nginx/:/etc/nginx/conf.d
+        networks: 
+            - devops-cloud
+
     registry:
         build:
             dockerfile: ./registry/registry.dockerfile
@@ -9,6 +21,8 @@ services:
         restart: always
         ports:
             - 5000:5000
+        #environment:
+        #    REGISTRY_STORAGE_FILESYSTEM_ROOTDIRECTORY: /data
         volumes:
             - /var/registry:/var/lib/registry
             #- /home/diegolirio/workspace/docker/cloud-devops/registry:/etc/docker
@@ -34,8 +48,8 @@ services:
             #REGISTRY_AUTH_HTPASSWD_REALM: Registry Realm
 
         networks: 
-            - infra-cloud
+            - devops-cloud
 
 networks: 
-    infra-cloud:
+    devops-cloud:
         driver: bridge                        
