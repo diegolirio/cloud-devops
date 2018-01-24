@@ -1,8 +1,3 @@
 {
-    "insecure-registries" : [ "registry.phoenix4go.com:5000" ]
+    "insecure-registries" : [ "13.71.125.248:5000" ]
 }
-/*
-{
-    "allow-nondistributable-artifacts": [ "registry.phoenix4go.com:5000" ]
-}
-*/

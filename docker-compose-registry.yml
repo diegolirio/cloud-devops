@@ -1,7 +1,7 @@
 version: '3'
 services:        
     nginx:
-        image: "nginx:1.9"
+        image: nginx:1.9
         container_name: nginx
         ports:
             - 5043:443
