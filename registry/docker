@@ -1,1 +1,1 @@
-DOCKER_OPTS="--insecure-registry registry.phoenix4go.com:5000"
+DOCKER_OPTS="--insecure-registry p4go-devops.southindia.cloudapp.azure.com:5000"
