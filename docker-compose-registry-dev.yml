@@ -12,19 +12,19 @@ services:
     #    networks: 
     #        - devops-cloud
 
-    registry:
+    registrydev:
         #build:
         #    dockerfile: ./registry/registry.dockerfile
         #    context: .
         image: registry:2
-        container_name: registry_prod
+        container_name: registrydev
         restart: always
         ports:
             - 5000:5000
         #environment:
         #    REGISTRY_STORAGE_FILESYSTEM_ROOTDIRECTORY: /data
         volumes:
-            - /var/registry_prod:/var/lib/registry
+            - /var/registry/develop:/var/lib/registry
             #- /home/diegolirio/workspace/docker/cloud-devops/registry:/etc/docker
         #insecure-registry: p4go-devops.southindia.cloudapp.azure.com:5000
 
@@ -48,8 +48,8 @@ services:
             #REGISTRY_AUTH_HTPASSWD_REALM: Registry Realm
 
         networks: 
-            - devops-cloud
+            - devops-cloud-dev
 
 networks: 
-    devops-cloud:
+    devops-cloud-dev:
         driver: bridge                        
