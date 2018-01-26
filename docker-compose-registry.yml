@@ -1,30 +1,30 @@
 version: '3'
 services:        
-    nginx:
-        image: nginx:1.9
-        container_name: nginx
-        ports:
-            - 5043:443
-        links:
-            - registry:registry
-        volumes:
-            - ./nginx/:/etc/nginx/conf.d
-        networks: 
-            - devops-cloud
+    #nginx:
+    #    image: nginx:1.9
+    #    container_name: nginx
+    #    ports:
+    #        - 5043:443
+    #    links:
+    #        - registry:registry
+    #    volumes:
+    #        - ./nginx/:/etc/nginx/conf.d
+    #    networks: 
+    #        - devops-cloud
 
     registry:
-        build:
-            dockerfile: ./registry/registry.dockerfile
-            context: .
-        image: phoenix4go/registry:2.1
-        container_name: registry
+        #build:
+        #    dockerfile: ./registry/registry.dockerfile
+        #    context: .
+        image: registry:2
+        container_name: registry_prod
         restart: always
         ports:
             - 5000:5000
         #environment:
         #    REGISTRY_STORAGE_FILESYSTEM_ROOTDIRECTORY: /data
         volumes:
-            - /var/registry:/var/lib/registry
+            - /var/registry_prod:/var/lib/registry
             #- /home/diegolirio/workspace/docker/cloud-devops/registry:/etc/docker
         #insecure-registry: p4go-devops.southindia.cloudapp.azure.com:5000
 
