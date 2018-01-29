@@ -4,6 +4,7 @@
 Para criar um registry basta executar o comando abaixo, no lugar do `[env]`, coloque `dev ou hom ou prod`:   
 ```
 sudo ./registry.sh [env]
+```
 
 ### Criando o proprio certificado
 
