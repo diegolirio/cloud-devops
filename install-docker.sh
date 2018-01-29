@@ -10,7 +10,7 @@ add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(
 
 apt-get update
 
-apt-get install docker-ce
+apt-get install docker-ce -y
 
-apt-cache madison docker-ce
+apt-cache madison docker-ce 
  
