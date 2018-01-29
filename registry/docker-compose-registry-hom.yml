@@ -12,9 +12,9 @@ services:
         volumes:
             - /var/registry/homolog:/var/lib/registry
             - /var/registry/certs:/certs
-        environment:
-            REGISTRY_HTTP_TLS_CERTIFICATE: /certs/domain.crt
-            REGISTRY_HTTP_TLS_KEY: /certs/domain.key              
+        #environment:
+        #    REGISTRY_HTTP_TLS_CERTIFICATE: /certs/domain.crt
+        #    REGISTRY_HTTP_TLS_KEY: /certs/domain.key              
             #VIRTUAL_HOST: localhost
             #VIRTUAL_PROTO: https
             #VIRTUAL_PORT: 5000
