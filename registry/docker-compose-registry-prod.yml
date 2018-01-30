@@ -9,13 +9,18 @@ services:
         restart: always
         ports:
             - 5001:5000
-        #environment:
-        #    REGISTRY_STORAGE_FILESYSTEM_ROOTDIRECTORY: /data
         volumes:
             - /var/registry/prod:/var/lib/registry
-            #- /home/diegolirio/workspace/docker/cloud-devops/registry:/etc/docker
-        #insecure-registry: p4go-devops.southindia.cloudapp.azure.com:5000
-
+        environment:
+            REGISTRY_HTTP_TLS_CERTIFICATE: /certs/domain.crt
+            REGISTRY_HTTP_TLS_KEY: /certs/domain.key              
+            #VIRTUAL_HOST: localhost
+            #VIRTUAL_PROTO: https
+            #VIRTUAL_PORT: 5000        #environment:
+        #    REGISTRY_STORAGE_FILESYSTEM_ROOTDIRECTORY: /data
+            #REGISTRY_AUTH: htpasswd
+            #REGISTRY_AUTH_HTPASSWD_PATH: /auth/htpasswd
+            #REGISTRY_AUTH_HTPASSWD_REALM: Registry Realm   
         #deploy:
         #    resources:
         #        limits:
@@ -23,18 +28,7 @@ services:
         #            memory: 50M
         #        reservations:
         #            cpus: '0.10'
-        #            memory: 20M 
-              
-        #environment:
-            #VIRTUAL_HOST: localhost
-            #VIRTUAL_PROTO: https
-            #VIRTUAL_PORT: 5000
-            #REGISTRY_HTTP_TLS_CERTIFICATE: /etc/letsencrypt/live/docker.domain.com/fullchain.pem
-            #REGISTRY_HTTP_TLS_KEY: /etc/letsencrypt/live/docker.domain.com/privkey.pem
-            #REGISTRY_AUTH: htpasswd
-            #REGISTRY_AUTH_HTPASSWD_PATH: /auth/htpasswd
-            #REGISTRY_AUTH_HTPASSWD_REALM: Registry Realm
-
+        #            memory: 20M     
         networks: 
             - devops-cloud-prod
 

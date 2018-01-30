@@ -8,8 +8,10 @@ env=$1
 dir=$(pwd)
 pwd
 if [ $env = "prod" ]; then
-    docker-compose -f docker-compose-registry-prod.yml down
-    docker-compose -f docker-compose-registry-prod.yml up -d
+    #docker-compose -f docker-compose-registry-prod.yml down
+    #docker-compose -f docker-compose-registry-prod.yml up -d
+    docker rm -f registryprod  
+    docker run -d -p 5001:5000 -v $dir/certs:/certs -e REGISTRY_HTTP_TLS_CERTIFICATE=/certs/domain.cert -e REGISTRY_HTTP_TLS_KEY=/certs/domain.key --restart=always --name registryprod registry:2    
 elif [ $env = "hom" ]; then
     docker-compose -f docker-compose-registry-hom.yml down
     docker-compose -f docker-compose-registry-hom.yml up -d  
