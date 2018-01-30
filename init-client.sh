@@ -44,4 +44,4 @@ echo "LETS Config Docker client Regsitries prod "
 echo ".............................. *************************** .............................."
 echo ".............................. *************************** .............................."
 mkdir -p /etc/docker/certs.d/registry.phoenix4go.com
-cp registry/certs_prod/domain.cert /etc/docker/certs.d/registry.phoenix4go.com
+cp registry/certs_prod/domain.cert /etc/docker/certs.d/registry.phoenix4go.com/ca.crt
