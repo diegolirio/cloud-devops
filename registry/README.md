@@ -14,7 +14,7 @@ openssl req -newkey rsa:4096 -nodes -sha256 \
                 -keyout certs/domain.key -x509 -days 356 \
                 -out certs/domain.cert
 ```                
-```
+```txt
 Generating a 4096 bit RSA private key
 ..........................................................................................................................................................................................................++
 ...............................................................................................................++
@@ -32,7 +32,7 @@ State or Province Name (full name) [Some-State]:Sao Paulo
 Locality Name (eg, city) []:Sao Paulo
 Organization Name (eg, company) [Internet Widgits Pty Ltd]:Phoenix4Go
 Organizational Unit Name (eg, section) []:Phoenix
-Common Name (e.g. server FQDN or YOUR name) []:Phoenix
+Common Name (e.g. server FQDN or YOUR name) []:registry.phoenix4go.com
 Email Address []:phoenix4go@gmail.com
 ```
 
