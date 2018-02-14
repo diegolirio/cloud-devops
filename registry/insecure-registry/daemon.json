@@ -1,5 +1,0 @@
-{
-    "insecure-registries" : [ 
-        "p4go-devops.southindia.cloudapp.azure.com:5000"
-       ]
-}
